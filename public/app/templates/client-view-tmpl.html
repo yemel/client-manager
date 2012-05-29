@@ -1,0 +1,25 @@
+<h2><%= name %></h2>
+<a href="#">Edit</a> | <a href="#">Pin</a><br/>
+<span>Dirección:</span> <span><%= address %></span><br/>
+<span>Cuit:</span> <span><%= cuit %></span><br/>
+<span>Categorías:</span>
+  <% _.each(category, function(cat){
+    %> <span class="tag"><%= cat %></span> <%
+}); %>
+<br/>
+
+<h3>Trabajos</h3>
+<hr>
+<span>Categoría | Cronológico</span><br>
+<a href="#" id="add-job-link">Nuevo trabajo</a>
+<div id="add-job" style="background: #F5F5F5; display: none;">
+<label>Categoría:</label>
+<select id="type"></select><br>
+<label>Categoría:</label>
+<select id="name"></select><br>
+<label>Presupueto:</label><input id="total_price"><br>
+<label>Fecha:</label><input id="date"><br>
+<input type="button" id="save" value="Agregar">
+<input type="button" id="cancel" value="Cancelar">
+</div>
+<ul id="jobs-list"></ul>

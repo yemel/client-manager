@@ -5,105 +5,21 @@
     <title>Clientes</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/tagit.css">
+    <script data-main="app/main" src="/lib/require/require.js"></script>
   </head>
   <body>
     <div id="clientsapp">
-    <header>
-      <h1>Clientes</h1>
-    </header>
-    
-    <section id="main"></section>
+      <header>
+        <h1>Clientes</h1>
+      </header>
+      
+      <section id="main"></section>
 
-    <footer></footer>
-  </div>
+      <footer></footer>
+    </div>
 
-  <div id="credits">
-    Created by<br><a href="http://twitter.com/#!/yemeljardi">@yemeljardi</a><br>
-  </div>
-
-    <script src="lib/jquery-1.7.1.js"></script>
-    <script src="lib/jquery-ui.1.8.20.min.js"></script>
-    <script src="lib/tagit.js"></script>
-    <script src="lib/underscore-1.3.1.js"></script>
-    <script src="lib/backbone.js"></script>
-    <script src="js/main.js"></script>
-
-    <script type="text/templte" id="client-list-tmpl">
-      <input id="search" type="text" placeholder="A quién estás buscando?">
-      <ul id="client-list"></ul>
-    </script>
-
-    <script type="text/templte" id="client-list-footer-tmpl">
-      <a class="tag" id="add-client">Nuevo Cliente</a>
-      <div class="client-count"><b><%= size %></b> clientes</div>
-    </script>
-
-    <script type="text/templte" id="client-footer-tmpl">
-      <a class="tag" id="delete-client">Borrar Cliente</a>
-      <a class="tag" id="edit-client">Editar Cliente</a>
-      <a class="tag" id="add-client">Nuevo Cliente</a>
-      <div>Super Cliente!</div>
-    </script>
-
-    <script type="text/templte" id="client-item-tmpl">
-      <label><%= name %></label>
-      <% _.each(category, function(cat){
-          %> <span class="tag"><%= cat %></span> <%
-      }); %>
-    </script>
-
-    <script type="text/templte" id="client-view-tmpl">
-    <h2><%= name %></h2>
-      <a href="#">Edit</a> | <a href="#">Pin</a><br/>
-      <span>Dirección:</span> <span><%= address %></span><br/>
-      <span>Cuit:</span> <span><%= cuit %></span><br/>
-      <span>Categorías:</span>
-        <% _.each(category, function(cat){
-          %> <span class="tag"><%= cat %></span> <%
-      }); %>
-      <br/>
-
-      <h3>Trabajos</h3>
-      <hr>
-      <span>Categoría | Cronológico</span><br>
-      <a href="#" id="add-job-link">Nuevo trabajo</a>
-      <div id="add-job" style="background: #F5F5F5; display: none;">
-      <label>Categoría:</label>
-      <select id="type"></select><br>
-      <label>Categoría:</label>
-      <select id="name"></select><br>
-      <label>Presupueto:</label><input id="total_price"><br>
-      <label>Fecha:</label><input id="date"><br>
-      <input type="button" id="save" value="Agregar">
-      <input type="button" id="cancel" value="Cancelar">
-      </div>
-      <ul id="jobs-list"></ul>
-    </script>
-
-    <script type="text/templte" id="job-item-tmpl">
-      <li>
-        <%= date %> <%= type %>
-        <%= name %> - <%= total_price %> <%= status %>
-      </li>
-    </script>
-
-    <script type="text/templte" id="client-edit-tmpl">
-    <h2><%= edit ? 'Editar cliente' : 'Nuevo Cliente' %></h2>
-      <span>Nombre:</span>
-      <span><input type="text" id="name" value="<%= name %>"></span><br/>
-      <span>Dirección:</span>
-      <span><input type="text" id="address" value="<%= address %>"></span><br/>
-      <span>Cuit:</span>
-      <span><input type="text" id="cuit" value="<%= cuit %>"></span><br/>
-      <span>Categorías:</span>
-      <span><ul id="category">
-      <% _.each(category, function(cat){
-          %> <li><%= cat %></li> <%
-      }); %>
-      </ul></span><br/>
-      <input type="button" id="save" value="save">
-      <input type="button" id="cancel" value="cancel">
-    </script>
-
+    <div id="credits">
+      Created by <a href="http://twitter.com/#!/yemeljardi">@yemeljardi</a><br>
+    </div>
   </body>
 </html>

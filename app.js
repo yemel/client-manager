@@ -19,6 +19,7 @@ mongoose.connect('mongodb://localhost/albert_database');
 app.configure(function(){
   app.use(express.bodyParser());
   app.use(express.methodOverride());
+  app.use(express.logger({ format: ':method :url' }));
   app.use(app.router);
   app.use(express.static(path.join(app_root, 'public')));
   app.use(express.errorHandler({ dumpExceptions: true, showStack: true }));
@@ -184,6 +185,6 @@ app.delete('/api/clients/:id/jobs/:jid', function(req, res){
   });
 });
 
-app.listen(3000, function(){
+app.listen(3001, function(){
   console.log("Express server listening on port %d in %s mode", app.address().port, app.settings.env);
 });

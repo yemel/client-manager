@@ -1,0 +1,15 @@
+<h2><%= edit ? 'Editar cliente' : 'Nuevo Cliente' %></h2>
+<span>Nombre:</span>
+<span><input type="text" id="name" value="<%= name %>"></span><br/>
+<span>Dirección:</span>
+<span><input type="text" id="address" value="<%= address %>"></span><br/>
+<span>Cuit:</span>
+<span><input type="text" id="cuit" value="<%= cuit %>"></span><br/>
+<span>Categorías:</span>
+<span><ul id="category">
+<% _.each(category, function(cat){
+    %> <li><%= cat %></li> <%
+}); %>
+</ul></span><br/>
+<input type="button" id="save" value="save">
+<input type="button" id="cancel" value="cancel">
